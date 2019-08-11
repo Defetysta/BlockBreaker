@@ -1,12 +1,24 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneLoader : MonoBehaviour {
+public class SceneLoader : MonoBehaviour
+{
+    public static SceneLoader Instance;
 
-	public void LoadNextScene()
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+    }
+
+    public void LoadNextLevel()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        if (currentSceneIndex > SceneManager.sceneCount)
+            currentSceneIndex = 0;
+
         SceneManager.LoadScene(currentSceneIndex + 1);
+
     }
 
     public void LoadStartScene()
@@ -21,5 +33,10 @@ public class SceneLoader : MonoBehaviour {
 #else
         Application.Quit();
 #endif
+    }
+
+    public void LoadGameOver()
+    {
+        SceneManager.LoadScene(CONST_VALUES.GAME_OVER_SCENE_NAME);
     }
 }
