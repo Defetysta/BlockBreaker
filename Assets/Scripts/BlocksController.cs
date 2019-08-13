@@ -10,7 +10,7 @@ public class BlocksController : MonoBehaviour
     }
     private IEnumerator AllBlocksDestrotyed()
     {
-        yield return new WaitUntil(() =>transform.childCount == 0);
+        yield return new WaitUntil(() => transform.childCount == 0);
         SceneLoader.Instance.LoadNextLevel();
     }
 }

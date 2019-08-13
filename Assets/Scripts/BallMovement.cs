@@ -40,4 +40,9 @@ public class BallMovement : MonoBehaviour
         yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
         isBallLocked = false;
     }
+
+    public bool IsBallLocked()
+    {
+        return isBallLocked;
+    }
 }
