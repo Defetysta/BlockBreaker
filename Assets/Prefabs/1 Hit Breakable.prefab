@@ -13,9 +13,12 @@ GameObject:
   - component: {fileID: 8696499210898395202}
   - component: {fileID: 8696499210898395203}
   - component: {fileID: 2273125147000045163}
+  - component: {fileID: -6196663396780870153}
+  - component: {fileID: 7224959775571668412}
+  - component: {fileID: -3392414812398274908}
   m_Layer: 0
-  m_Name: Block Square
-  m_TagString: Block
+  m_Name: BreakableBlockOneHit
+  m_TagString: Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f1854b627490d584b8f49542afce2c8e, type: 3}
-  m_Color: {r: 1, g: 0.23113209, b: 0.23113209, a: 1}
+  m_Color: {r: 1, g: 0.9931358, b: 0.23137254, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -121,7 +124,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3874cfbccf76e041bb46bb954b33abd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blockDestroyed: {fileID: 11400000, guid: 73d0facd02d2cfb4a8bf3348e6fc6835, type: 2}
+  blockHit: {fileID: 11400000, guid: 73d0facd02d2cfb4a8bf3348e6fc6835, type: 2}
+  breakBlockParticle: {fileID: 100000, guid: 7d846c02296ef4dc4abff04ce3e5262c, type: 3}
+  damageSprites: []
+  grantPoints: {fileID: -6196663396780870153}
+  decreaseBlockNumber: {fileID: 7224959775571668412}
+  increaseblockNumber: {fileID: -3392414812398274908}
+  maxHits: 1
 --- !u!82 &2273125147000045163
 AudioSource:
   m_ObjectHideFlags: 0
@@ -218,3 +227,87 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-6196663396780870153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8696499210898395207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79970df23c7e8c459455f5c826f3150, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnCollectEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 26198627544fa344aaa23f12be00614c, type: 2}
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &7224959775571668412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8696499210898395207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79970df23c7e8c459455f5c826f3150, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnCollectEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 82f6bca8359db044495153e66af12f0f, type: 2}
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &-3392414812398274908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8696499210898395207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79970df23c7e8c459455f5c826f3150, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnCollectEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 6ebfb92db11f52e4cab73ad9265e7e3d, type: 2}
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null

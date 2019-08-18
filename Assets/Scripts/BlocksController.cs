@@ -3,14 +3,17 @@ using UnityEngine;
 
 public class BlocksController : MonoBehaviour
 {
-
+    [SerializeField]
+    private IntVariable numberOfBlocks = null;
     private void Start()
     {
-        StartCoroutine(AllBlocksDestrotyed());
+        StartCoroutine(AwaitAllBlocksDestroyed());
     }
-    private IEnumerator AllBlocksDestrotyed()
+    private IEnumerator AwaitAllBlocksDestroyed()
     {
-        yield return new WaitUntil(() => transform.childCount == 0);
+        yield return null;
+        yield return new WaitUntil(() => numberOfBlocks.Value == 0);
+        yield return null;
         SceneLoader.Instance.LoadNextLevel();
     }
 }

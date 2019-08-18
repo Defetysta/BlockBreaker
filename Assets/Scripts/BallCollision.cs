@@ -14,14 +14,11 @@ public class BallCollision : MonoBehaviour
         ballMovement = GetComponent<BallMovement>();
     }
 
-    private void Update()
-    {
-
-    }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (ballMovement.IsBallLocked() == false && collision.gameObject.CompareTag(CONST_VALUES.BLOCK_TAG) == false)
-            bounceSound.Play(audioSource);
+        ballMovement.TweakVelocity();
+        if (ballMovement.IsBallLocked() == false)
+            if(collision.gameObject.CompareTag(CONST_VALUES.BREAKABLE_TAG) == false && (collision.gameObject.CompareTag(CONST_VALUES.UNBREAKABLE_TAG)) == false)
+                bounceSound.Play(audioSource);
     }
 }

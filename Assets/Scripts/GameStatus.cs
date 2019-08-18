@@ -1,15 +1,29 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿using UnityEngine;
 public class GameStatus : MonoBehaviour
 {
     [SerializeField]
-    [Range(0, 2)]
-    private float gameSpeedMultiplier = 1f;
+    private FloatVariable gameSpeedMultiplier = null;
 
-    private void Update()
+    public bool isAutoPlaying = false;
+
+    private void Start()
     {
-        Time.timeScale = gameSpeedMultiplier;
+        ResetTimeScale();
+    }
+
+    private void Awake()
+    {
+        ResetTimeScale();
+    }
+    private void ResetTimeScale()
+    {
+        if (gameSpeedMultiplier.ResetOnStart)
+            gameSpeedMultiplier.Value = 1;
+    }
+
+    public void SetTimeScale()
+    {
+        Debug.Log(gameSpeedMultiplier.Value);
+        Time.timeScale = gameSpeedMultiplier.Value;
     }
 }

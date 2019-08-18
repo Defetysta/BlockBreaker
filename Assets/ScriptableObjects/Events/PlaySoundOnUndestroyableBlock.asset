@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52f41b01e0d701e42b2d60f65408505e, type: 3}
+  m_Name: PlaySoundOnUndestroyableBlock
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: 62b79cf55aa30f64c8ed627c5ab6cb71, type: 3}
+  volume:
+    minValue: 0.12731077
+    maxValue: 0.22305547
+  pitch:
+    minValue: 1.3586676
+    maxValue: 1.5161145

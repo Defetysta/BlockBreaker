@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80907a590e77de6449a2cf3235fd9bd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  paddleMovement: {fileID: 0}
+  randomFactor: {fileID: 11400000, guid: 00cdd17fee0b10b459e987407483a4b7, type: 2}
 --- !u!82 &9039110614876417367
 AudioSource:
   m_ObjectHideFlags: 0

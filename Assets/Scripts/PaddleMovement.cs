@@ -1,22 +1,40 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class PaddleMovement : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
     private Vector2 desiredPosition;
     private float spriteWidth;
+    private GameStatus gameStatus;
+    private BallMovement ballMovement;
     private void Start()
     {
         desiredPosition = transform.position;
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteWidth = spriteRenderer.size.x;
+        gameStatus = FindObjectOfType<GameStatus>();
+        ballMovement = FindObjectOfType<BallMovement>();
     }
 
     private void Update()
     {
-        GetMouseXPosition();
+        ChooseInput();
         ClampXPosition();
         transform.position = desiredPosition;
+    }
+
+    private void ChooseInput()
+    {
+        if (gameStatus.isAutoPlaying == false)
+            GetMouseXPosition();
+        else
+            GetBallPosition();
+    }
+
+    private void GetBallPosition()
+    {
+        desiredPosition.x = ballMovement.transform.position.x;
     }
 
     private void GetMouseXPosition()

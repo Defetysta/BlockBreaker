@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 52f41b01e0d701e42b2d60f65408505e, type: 3}
-  m_Name: BlockDestroyedEvent
+  m_Name: PlaySoundOnBallBounce
   m_EditorClassIdentifier: 
   clips:
-  - {fileID: 8300000, guid: c45613c9a78cfb746963ea921c760cd7, type: 3}
+  - {fileID: 8300000, guid: a459260f9136fd049b22dfba3de35a6b, type: 3}
   volume:
-    minValue: 0.8404255
-    maxValue: 0.93617016
+    minValue: 0.106382996
+    maxValue: 0.2978724
   pitch:
-    minValue: 1.112766
-    maxValue: 1.2702129
+    minValue: 0.25531918
+    maxValue: 0.5957449

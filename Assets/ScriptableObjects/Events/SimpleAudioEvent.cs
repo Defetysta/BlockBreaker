@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(menuName = "Audio Events/Simple")]
+[CreateAssetMenu(menuName = "Events/Audio Events/Simple")]
 public class SimpleAudioEvent : AudioEvent
 {
     public AudioClip[] clips;
